@@ -1,0 +1,11 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Services"
+    url: /services/
+  - title: "Pricing"
+    url: /pricing/
+  - title: "Guides"
+    url: /guides/
+  - title: "Blog"
+    url: /blog/
