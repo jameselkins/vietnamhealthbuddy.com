@@ -1,0 +1,100 @@
+---
+layout: page
+title: Pricing
+permalink: /pricing/
+---
+<script src="https://js.stripe.com/v3/"></script>
+<div class="pricing-header pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Pricing</h1>
+  <p class="lead">We have 2 packages and a number of other services. Check them out below!</p>
+</div>
+<div class="card-deck mb-3">
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">The Orientation Package</h4>
+    </div>
+    <div class="card-body text-center">
+      <h1 class="card-title pricing-card-title">$449<!--  <small class="text-muted">/ mo</small> --></h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li>
+          Orientation Tour
+          <a
+            tabindex="0"
+            data-toggle="popover"
+            data-trigger="focus"
+            data-placement="right"
+            data-content="We'll pick you up and:<br> <ul class='pl-3'><li></li></ul>"
+            data-html="true"
+            class="information-icon"
+          >
+            <i class="fa fa fa-info-circle" /></i>
+          </a>
+        </li>
+        <li>
+          2 weeks motorbike rental + personal lessons
+          <a
+            tabindex="0"
+            data-toggle="popover"
+            data-trigger="focus"
+            data-placement="right"
+            data-content="We'll make sure you're 100% comfortable on the roads!<br />Includes: <ul class='pl-3'><li>Loaner Helmet + purchasing assistance</li><li>Driving Glasses</li><li>Driving Gloves</li></ul>"
+            data-html="true"
+            class="information-icon"
+          >
+            <i class="fa fa fa-info-circle" /></i>
+          </a>
+
+        </li>
+        <li>Airport pick-up & drop-off service</li>
+        <li>Single-entry 30-day visa</li>
+        <li>5GB SIM Card</li>
+        <li>2 weeks Phone/Email/Text support</li>
+      </ul>
+      {% include stripe_checkout.html product_key='orientation_package' %}
+
+    </div>
+  </div>
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">The Arrival Package</h4>
+    </div>
+    <div class="card-body text-center">
+      <h1 class="card-title pricing-card-title">$749<!--  <small class="text-muted">/ mo</small> --></h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li>
+          2 weeks accomodation for up to 2 people
+          <a
+            tabindex="0"
+            data-toggle="popover"
+            data-trigger="focus"
+            data-placement="right"
+            data-content="Includes: <ul class='pl-3'><li>Laundry</li><li>Water</li><li>Electricity</li><li>High-speed always-on Internet</li><li></li></ul>"
+            data-html="true"
+            class="information-icon"
+          >
+            <i class="fa fa fa-info-circle" /></i>
+          </a>
+        </li>
+        <li>
+          2 weeks motorbike rental + personal lessons
+          <a
+            tabindex="0"
+            data-toggle="popover"
+            data-trigger="focus"
+            data-placement="right"
+            data-content="We'll make sure you're 100% comfortable on the roads!<br />Includes: <ul class='pl-3'><li>Loaner Helmet + purchasing assistance</li><li>Driving Glasses</li><li>Driving Gloves</li></ul>"
+            data-html="true"
+            class="information-icon"
+          >
+            <i class="fa fa fa-info-circle" /></i>
+          </a>
+        </li>
+        <li>Airport pick-up & drop-off service</li>
+        <li>Single-entry 30-day visa</li>
+        <li>5GB SIM Card</li>
+        <li>2 weeks Phone/Email/Text support</li>
+      </ul>
+      {% include payment_modal.html product_key='arrival_package' %}
+    </div>
+  </div>
+</div>

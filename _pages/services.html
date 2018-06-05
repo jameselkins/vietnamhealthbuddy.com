@@ -1,0 +1,32 @@
+---
+layout: page
+title: Services
+permalink: /services/
+---
+{% assign services = site.data.services %}
+<div class='row'>
+  {% for service_hash in services %}
+    {% assign service = service_hash[1] %}
+    <div class='col-lg-4 col-sm-6 mb-4'>
+      <div class='card h-100'>
+        <a href='{{ service.page_link | relative_url }}'>
+          <img
+            class='card-img-top'
+            src="{{ service.card_image }}"
+            alt=""
+          >
+        </a>
+        <div class='card-body'>
+          <h4 class='card-title'>
+            <a href="{{ service.page_link }}">{{ service.title }}</a>
+          </h4>
+          <p class='card-text'>
+            {{ service.card_body }}
+
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+</div>

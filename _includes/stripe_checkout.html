@@ -1,0 +1,34 @@
+{% assign product = site.data.products[include.product_key] %}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button type="button" class="btn btn-lg btn-block btn-outline-primary" id='{{ product.id }}-stripe-button'>Book Now!</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: '{{ site.data.api_keys.stripe_public_key}}',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('{{ product.id }}-stripe-button').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'VietnamBuddy',
+    description: '{{ product.description}}',
+    amount: {{ product.amount_cents }},
+    zipCode: true,
+    billingAddress: true
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
+

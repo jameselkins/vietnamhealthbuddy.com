@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% include carousel.html %}
+
+<div class="container marketing">
+  <div class="row">
+    <div class='col-lg-12 text-center'>
+      <h4>{{ page.call_to_action_data.headline}}</h4>
+      <h4>{{ page.call_to_action_data.headline2}}</h4>
+        <div class='row splash-page-booking-row mx-auto'>
+          <div class='col-sm-6 mt-2'>
+            <a
+              class="btn btn-lg btn-primary"
+              href="{{ page.call_to_action_data.booking_cta_url | relative_url }}"
+              role="button">
+                {{ page.call_to_action_data.booking_cta }}
+            </a>
+          </div>
+          <div class='col-sm-6 mt-2'>
+            <a
+              class="btn btn-lg btn-success"
+              href="{{ page.call_to_action_data.consulting_cta_url | relative_url }}"
+              role="button">
+                {{ page.call_to_action_data.consulting_cta }}
+            </a>
+          </div>
+        </div>
+
+
+
+
+    </div>
+
+  </div>
+<br />
+{% include blog_first_three.html %}
+{% include featurettes.html %}
+</div>

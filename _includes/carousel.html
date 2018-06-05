@@ -1,0 +1,40 @@
+{% assign carousel_data = page.carousel_data %}
+<div id="vbCarousel" class="carousel slide" data-ride="carousel" data-interval='300000'>
+  <ol class="carousel-indicators">
+    {% for cd in carousel_data %}
+    <li data-target="#vbCarousel" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.first %}active{% endif %}"></li>
+    {% endfor %}
+  </ol>
+  <div class="carousel-inner">
+    {% for cd in carousel_data %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img
+          class="slide-{{ forloop.index0 }}"
+          src=
+            {% if cd.image_path contains "://" %}
+                "{{ cd.image_path }}"
+              {% else %}
+                "{{ cd.image_path | relative_url }}"
+              {% endif %}
+          alt="{{ cd.alt }}">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>{{ cd.headline }}</h1>
+            <p>{{ cd.description }}</p>
+            <p><a class="btn btn-lg btn-primary" href="{{ cd.cta_url | relative_url }}" role="button">{{ cd.cta }}</a></p>
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+  <a class="carousel-control-prev" href="#vbCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#vbCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

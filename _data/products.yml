@@ -1,0 +1,12 @@
+orientation_package:
+  id: 1
+  name: 'The Orientation Package'
+  description: 'The Orientation Package'
+  amount_cents: 44900
+  amount_currency: '$449.00'
+arrival_package:
+  id: 2
+  name: 'The Arrival Package'
+  description: 'The Arrival Package'
+  amount_cents: 74900
+  amount_currency: '$749.00'

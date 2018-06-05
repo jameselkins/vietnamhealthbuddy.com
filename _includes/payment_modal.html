@@ -1,0 +1,56 @@
+{% assign product = site.data.products[include.product_key] %}
+
+<button
+  type="button"
+  class="btn btn-lg btn-block btn-outline-primary"
+  data-toggle="modal"
+  data-target="#payment-modal-for-product-{{ product.id }}"
+>
+  {{ include.button_text | default: "Book Now!"}}
+</button>
+
+<div class="modal fade" id="payment-modal-for-product-{{ product.id}}" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">{{ product.name }} - {{ product.amount_currency }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="payment-form-for-product-{{ product.id }}">
+          <div class="form-group text-left">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control input-for-product-{{ product.id }}" id="email" placeholder="example@example.com">
+          </div>
+          <div class="form-group text-left">
+            <label for="street-address">Street Address</label>
+            <input type="text" class="form-control input-for-product-{{ product.id }}" id="street-address-for-product-{{ product.id }}" placeholder="123 Main St">
+          </div>
+          <div class="form-group text-left">
+            <label for="card-element">Credit card or debit card</label>
+            <span id="card-element-for-product-{{ product.id }}" class="form-control"></span>
+          </div>
+          <input type="hidden" name="product_id" value=>
+          <input type="hidden" id='hidden-flag-for-stripe-element-completeness-for-product-{{ product.id }}' class="input-for-product-{{ product.id }}">
+          <button id="submit-button-for-product-{{ product.id }}" class="btn btn-primary" disabled>Submit</button>
+        </form>
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  function startPaymentsForModal() {
+    $("#payment-modal-for-product-{{ product.id}}").on('show.bs.modal', function(e) {
+      var inputsSelector = ".input-for-product-{{ product.id }}"
+      inputsMustBePresent(inputsSelector,'#submit-button-for-product-{{ product.id }}')
+      startPayments("{{ product.id }}", inputsSelector, "{{ site.data.api_keys.stripe_public_key}}")
+    })
+  }
+  defer(startPaymentsForModal);
+</script>

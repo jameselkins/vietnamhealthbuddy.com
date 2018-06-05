@@ -1,0 +1,24 @@
+{% assign feature_row_data = page.feature_row_data %}
+<div class="row feature-row">
+  {% assign feature_row_size = feature_row_data | size %}
+  {% assign col_width = 12 | divided_by: feature_row_size %}
+
+  {% for fr in feature_row_data %}
+    <div class="col-lg-{{ col_width }} feature-column">
+      <img
+      class="rounded-circle"
+      src=
+        {% if fr.image_path contains "://" %}
+          "{{ fr.image_path }}"
+        {% else %}
+          "{{ fr.image_path | relative_url }}"
+        {% endif %}
+      alt="Generic placeholder image" width="140" height="140">
+      <h2>{{ fr.heading}}</h2>
+      <p>{{ fr.description }}</p>
+      <p><a class="btn btn-secondary" href="{{ fr.cta_url | relative_url }}" role="button">{{ fr.cta }} &raquo;</a></p>
+    </div>
+  {% endfor %}
+</div><!-- /.row -->
+
+

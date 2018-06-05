@@ -1,0 +1,10 @@
+<img
+  class="featurette-image img-fluid mx-auto"
+  alt="featurette-image"
+  src=
+    {% if include.frte.image_path contains "://" %}
+      "{{ frte.image_path }}"
+    {% else %}
+      "{{ include.frte.image_path | relative_url }}"
+    {% endif %}
+  >

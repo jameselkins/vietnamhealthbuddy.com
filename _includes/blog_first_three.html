@@ -1,0 +1,31 @@
+<div class="row feature-row">
+  <div class='col-lg-12 text-center'>
+    <h4>From The Blog</h4>
+  </div>
+  {% for post in site.posts %}
+    {% if post.tags contains 'featured'%}
+      <div class="col-lg-{{ 4 }} feature-column">
+        <img
+        class="rounded-circle"
+        src=
+          {% if post.splash_page_image_path contains "://" %}
+            "{{ post.splash_page_image_path }}"
+          {% else %}
+            "{{ post.splash_page_image_path | relative_url }}"
+          {% endif %}
+        alt="Generic placeholder image" width="140" height="140">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+        <p><a class="btn btn-secondary" href="{{ post.url }}" role="button">Read More &raquo;</a></p>
+      </div>
+      {% comment %} if we only show first three posts , uncomment
+        {% if forloop.index == 3%}
+
+          {% break %}
+        {% endif %}
+      {% endcomment %}
+    {% endif %}
+  {% endfor %}
+</div><!-- /.row -->
+
+

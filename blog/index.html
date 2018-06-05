@@ -1,0 +1,40 @@
+---
+layout: page
+title: Blog
+---
+<div class="row">
+  <div class="col-md-12">
+    <h1>Blog
+      <!-- <small>Secondary Text</small> -->
+    </h1>
+    {% for post in paginator.posts %}
+      <div class="card mb-4">
+        <img
+          class="card-img-top"
+          src=
+            {% if post.blog_header_image_path contains "://" %}
+            "{{ post.blog_header_image_path }}"
+            {% else %}
+              "{{ post.blog_header_image_path | relative_url }}"
+            {% endif %}
+          alt="Card image cap"
+        >
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title}}</h2>
+          <p class="card-text">{{ post.excerpt }}</p>
+          <a href="{{ post.url }}" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on Posted on {{ post.date | date: "%b %d, %Y"}} by
+          {{ site.data.authors[post.author].name }}
+        </div>
+      </div>
+    {% endfor %}
+    <!-- Blog Post -->
+
+    <!-- Pagination -->
+
+    <!-- Pagination links -->
+    {% include paginator.html %}
+  </div>
+</div>

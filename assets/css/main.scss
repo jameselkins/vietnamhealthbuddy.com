@@ -1,0 +1,25 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+.font-size-11 {
+  font-size: 11px;
+}
+
+.splash-page-booking-row {
+  max-width: 400px;
+}
+
+
+
+@charset "utf-8";
+@import "carousel";
+@import "payments";

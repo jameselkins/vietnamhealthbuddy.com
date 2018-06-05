@@ -1,0 +1,27 @@
+{% assign featurette_data = page.featurette_data %}
+{% assign featurette_data_size = featurette_data | size %}
+
+
+{% for frte in featurette_data %}
+<hr class="featurette-divider">
+<div class="row featurette">
+  {% assign featurette_even = forloop.index | modulo:2 %}
+
+  {% if featurette_even == 0 %}
+    <div class="col-md-7">
+      {% include featurette_heading.html frte=frte %}
+    </div>
+    <div class="col-md-5">
+      {% include featurette_image.html frte=frte %}
+    </div>
+
+  {% else %}
+    <div class="col-md-7 order-md-2">
+      {% include featurette_heading.html frte=frte %}
+    </div>
+    <div class="col-md-5 order-md-1">
+      {% include featurette_image.html frte=frte %}
+    </div>
+  {% endif %}
+</div>
+{% endfor %}

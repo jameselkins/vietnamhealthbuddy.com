@@ -1,0 +1,39 @@
+{
+  "name": "vietnambuddy.com",
+  "version": "0.0.1",
+  "description": "Vietnam Buddy Jekyll theme npm build scripts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jameselkins/vietnambuddy-bs.git"
+  },
+  "keywords": [
+    "vietnambuddy",
+    "vietnam"
+  ],
+  "author": "James Elkins",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jameselkins/vietnambuddy-bs/issues"
+  },
+  "homepage": "https://vietnambuddy.com/",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^1.7.0",
+    "onchange": "^2.2.0",
+    "uglify-js": "^3.3.27"
+  },
+  "scripts": {
+    "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/custom/* assets/js/_main.js -b -m -o assets/js/main.min.js",
+    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- yarn uglify",
+    "build:vendorcss": "uglifycss node_modules/bootstrap/dist/css/bootstrap.min.css > assets/css/vendor.css",
+    "sync-images": "aws s3 sync ./assets/images s3://vietnambuddy --profile jameselkins_personal --delete --acl 'public-read' --exclude '.DS_Store'"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "uglifycss": "^0.0.29"
+  }
+}

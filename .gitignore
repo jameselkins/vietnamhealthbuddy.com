@@ -1,3 +1,14 @@
 _site
 .sass-cache
 .jekyll-metadata
+*.gem
+*.sublime-project
+*.sublime-workspace
+.bundle
+.DS_Store
+_asset_bundler_cache
+codekit-config.json
+example/_site
+node_modules
+npm-debug.log*
+assets/images

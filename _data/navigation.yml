@@ -3,9 +3,9 @@ main:
     url: /about/
   - title: "Services"
     url: /services/
-  - title: "Pricing"
-    url: /pricing/
   - title: "Guides"
     url: /guides/
   - title: "Blog"
     url: /blog/
+  - title: "Book Now!"
+    url: /pricing/

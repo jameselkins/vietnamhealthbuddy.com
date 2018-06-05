@@ -267,6 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll
   jekyll-algolia
   jekyll-data
   jekyll-feed
