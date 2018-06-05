@@ -14,8 +14,8 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/vendor.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/vendor.css' | relative_url }}?{{site.time | date: '%s%N'}}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?{{site.time | date: '%s%N'}}">
 
 <!-- fuckhead -->
 {% if site.head_scripts %}
