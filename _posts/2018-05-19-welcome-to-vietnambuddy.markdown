@@ -8,8 +8,8 @@ description: 'monkey description'
 author: jameselkins
 categories: blog
 tags: featured
-splash_page_image_path: https://s3.amazonaws.com/vietnambuddy/blog_posts/chain-close-up-display-1036857-splash-page.jpeg
-blog_header_image_path: https://s3.amazonaws.com/vietnambuddy/blog_posts/chain-close-up-display-1036857-blog-header.png
+splash_page_image_path: https://vietnamhealthbuddy.s3.amazonaws.com/blog_posts/chain-close-up-display-1036857-splash-page.jpeg
+blog_header_image_path: https://vietnamhealthbuddy.s3.amazonaws.com/blog_posts/chain-close-up-display-1036857-blog-header.png
 ---
 
 Hello world!

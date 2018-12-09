@@ -1,21 +1,21 @@
 {
-  "name": "vietnambuddy.com",
+  "name": "vietnamhealthbuddy.com",
   "version": "0.0.1",
-  "description": "Vietnam Buddy Jekyll theme npm build scripts",
+  "description": "Vietnam Health Buddy Jekyll theme npm build scripts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jameselkins/vietnambuddy-bs.git"
+    "url": "git@github.com:jameselkins/vietnamhealthbuddy.com.git"
   },
   "keywords": [
-    "vietnambuddy",
+    "vietnamhealthbuddy",
     "vietnam"
   ],
   "author": "James Elkins",
-  "license": "UNLICENSED",
+  "license": "Proprietary",
   "bugs": {
-    "url": "https://github.com/jameselkins/vietnambuddy-bs/issues"
+    "url": "https://github.com/jameselkins/vietnamhealthbuddy.com/issues"
   },
-  "homepage": "https://vietnambuddy.com/",
+  "homepage": "https://vietnamhealthbuddy.com/",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -25,8 +25,8 @@
     "uglify-js": "^3.3.27"
   },
   "scripts": {
-    "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/custom/* assets/js/_main.js -b -m -o assets/js/main.min.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- yarn uglify",
+    "uglifyjs": "uglifyjs node_modules/jquery/dist/jquery.min.js node_modules/bootstrap/dist/js/bootstrap.bundle.js assets/js/custom/* assets/js/_main.js -b -m -o assets/js/main.min.js",
+    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- yarn uglifyjs",
     "build:vendorcss": "uglifycss node_modules/bootstrap/dist/css/bootstrap.min.css > assets/css/vendor.css",
     "sync-images": "aws s3 sync ./assets/images s3://vietnambuddy --profile jameselkins_personal --delete --acl 'public-read' --exclude '.DS_Store'"
   },
