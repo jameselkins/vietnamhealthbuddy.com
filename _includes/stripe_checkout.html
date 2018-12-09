@@ -17,7 +17,7 @@ var handler = StripeCheckout.configure({
 document.getElementById('{{ product.id }}-stripe-button').addEventListener('click', function(e) {
   // Open Checkout with further options:
   handler.open({
-    name: 'VietnamBuddy',
+    name: 'VietnamHealthBuddy',
     description: '{{ product.description}}',
     amount: {{ product.amount_cents }},
     zipCode: true,

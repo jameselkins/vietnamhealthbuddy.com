@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to VietnamBuddy"
+title:  "Welcome to VietnamHealthBuddy"
 date:   2018-05-12 09:41:46 +0700
 categories: jekyll update
 excerpt: "We're so excited to get started!"
@@ -14,4 +14,4 @@ blog_header_image_path: https://s3.amazonaws.com/vietnambuddy/blog_posts/chain-c
 
 Hello world!
 
-We're delighted to announce the launch of VietnamBuddy.com .  For many years,
+We're delighted to announce the launch of VietnamHealthBuddy.com .  For many years,

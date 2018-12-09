@@ -33,7 +33,7 @@ function startPayments(productId, inputsSelector, stripePublicKey){
     } else if (value.token) {
       var formData = new FormData;
       $.ajax({
-        url: 'https://api.vietnambuddy.com/pay',
+        url: 'https://api.vietnamhealthbuddy.com/pay',
         product_id: productId
       })
     } else {

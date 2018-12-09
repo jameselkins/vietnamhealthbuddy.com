@@ -13,17 +13,17 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: VietnamBuddy.com
+title: VietnamHealthBuddy.com
 title_separator: "|"
 email: james.elkins1@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  VietnamBuddy.com is a consulting agency specializing in advising new arrivals to Vietnam
+  VietnamHealthBuddy.com is a consulting agency specializing in advising new arrivals to Vietnam
   on how to successfully navigate living, working and playing in Vietnam.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vietnam_buddy
 github_username:  jameselkins
-repository: 'jameselkins/vietnambuddy.com'
+repository: 'jameselkins/vietnamhealthbuddy.com'
 analytics:
   provider: google-gtag
   google:
