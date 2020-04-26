@@ -31,7 +31,7 @@
     "sync-images": "aws s3 sync ./assets/images s3://vietnambuddy --profile jameselkins_personal --delete --acl 'public-read' --exclude '.DS_Store'"
   },
   "dependencies": {
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "uglifycss": "^0.0.29"
